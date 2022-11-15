@@ -5,51 +5,85 @@
     <title>회원가입</title>
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css/">
     <script src="/resources/js/jquery.js"></script>
+    <style>
+
+        #memberName,#memberPassword,#memberEmail,#sample3_detailAddress,#sample3_extraAddress{
+            width: 410px;
+        }
+        #memberMobile{
+            width:250px;
+            margin-left: 10px;
+            margin-top: 24px;
+        }
+        #telecom{
+            width:150px;
+        }
+        #sample3_postcode{
+            width:120px;
+        }
+        #addressSearch{
+            width: 150px;
+        }
+        #sample3_address{
+            width: 410px;
+        }
+        #carModel,#carYear{
+            width: 200px;
+        }
+        #savebutton{
+            margin-left: 330px;
+        }
+    </style>
 </head>
 <body>
-<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
- <div class="container">
+<%--<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>--%>
+ <div class="container m-lg-auto">
      <main>
        <div>
-            <h2>회원가입</h2>
+            <h2 class="mb-4">회원가입</h2>
        </div>
        <div class="row g-5">
          <div class="col-md-7 col-lg-8 ">
              <h4 class="mb-3">회원가입 목록</h4>
              <form action="/member/save" method="post" name="saveform">
-                 <div class="row-cols-sm-6">
+                 <div class="row-cols-sm-6 mb-3">
                      <label for="memberEmail" class="form-label">이메일</label>
                      <input type="text" class="form-control" name="memberEmail" id="memberEmail" placeholder="이메일을 입력해주세요." onblur="emailCk()">
                      <span id="emailCk"></span>
                  </div>
-                 <div class="col-12">
+                 <div class="col-12 mb-3">
                      <label for="memberPassword">비밀번호</label>
-                     <input type="text" class="form-control" name="memberPassword" id="memberPassword" placeholder="8-15자의 영어 소문자,숫자,특수문자로 조합해주세요.">
-                     <span id="passwordCk"></span>
+                     <input type="text" class="form-control" name="memberPassword" id="memberPassword" placeholder="8-15자의 영어 소문자,숫자,특수문자로 조합해주세요." onblur="passwordCk()">
+                     <span id="passwordck"></span>
                  </div>
-                 <div class="col-12 mb-5">
+                 <div class="col-12 mb-3">
                      <label for="memberName">이름</label>
                      <input type="text" class="form-control" name="memberName" id="memberName" placeholder="이름을 입력해주세요.">
                      <span id="nameCk"></span>
                  </div>
-                 <div class="col-12 mb-3" >
-                   <div>
-                       <label for="telecom">전화번호</label>
-                       <select  id="telecom" class="form-select">
-                           <option>SKT</option>
-                           <option>KT</option>
-                           <option>LG U+</option>
-                           <option>알뜰폰</option>
-                       </select>
+                 <div class="mb-3" >
+                   <div class="row">
+                       <div class="col-2 mb-3">
+                           <label for="telecom">전화번호</label>
+                           <select  id="telecom" class="form-select">
+                               <option selected>통신사</option>
+                               <option>SKT</option>
+                               <option>KT</option>
+                               <option>LG U+</option>
+                               <option>알뜰폰</option>
+                           </select>
+                       </div>
+                       <div class="col">
+                           <input type="text" class="form-control" name="memberMobile" id="memberMobile" placeholder="핸드폰 번호를 입력해주세요." onblur="mobileCk()">
+                           <span id="mobileck"></span>
+                       </div>
                    </div>
-                   <div class="col-12 mb-5">
-                       <input type="text" class="form-control" name="memberMobile" id="memberMobile" placeholder="핸드폰 번호를 입력해주세요.">
-                   </div>
-                     <div class="col-12 mb-5">
+                    <div class="row">
+                     <div class="col-12 mb-3">
                          <label for="sample3_address">주소</label>
 <%--                         <input type="text" class="form-control" name="memberAdress" id="memberAdress" placeholder="주소를 입력해주세요">--%>
-    <input type="text" id="sample3_postcode" placeholder="우편번호" class="form-control">
-    <input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기" class="form-select"><br>
+    <input type="text" id="sample3_postcode" placeholder="우편번호" class="form-control"><div class="col">
+    <input type="button" id="addressSearch" onclick="sample3_execDaumPostcode()" value="우편번호 찾기" class="form-select"><br>
     <input type="text" name =memberAdress id="sample3_address" class="form-control" placeholder="주소"><br>
     <input type="text" id="sample3_detailAddress" placeholder="상세주소" class="form-control">
     <input type="text" id="sample3_extraAddress" placeholder="참고항목" class="form-control">
@@ -57,7 +91,6 @@
     <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
         <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
     </div>
-
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
@@ -67,7 +100,6 @@
             // iframe을 넣은 element를 안보이게 한다.
             element_wrap.style.display = 'none';
         }
-
         function sample3_execDaumPostcode() {
             // 현재 scroll 위치를 저장해놓는다.
             var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
@@ -133,9 +165,12 @@
             // iframe을 넣은 element를 보이게 한다.
             element_wrap.style.display = 'block';
         }
+
+
     </script>
                      </div>
-                     <div class="mb-5">
+                   <div class="row mt-3">
+                     <div class="col-3 mb-5">
                          <label for="carModel">차종</label>
                          <select name="carModel" id="carModel" class="form-select">
                              <option selected>차종을 선택해주세요</option>
@@ -149,12 +184,12 @@
                              <option value="K7">K7</option>
                              <option value="카니발">카니발</option>
                              <option value="G70">G70</option>
-                             <option value="G80">G800</option>
+                             <option value="G80">G80</option>
                              <option value="GV70">GV70</option>
                              <option value="GV80">GV80</option>
                          </select>
                      </div>
-                     <div class="mb-5">
+                     <div class="col mb-5">
                          <label for="carYear">연식</label>
                          <select name="carYear" id="carYear" class="form-select">
                              <option selected>연식을 선택해주세요.</option>
@@ -171,10 +206,13 @@
                              <option value="2012">2012</option>
                          </select>
                      </div>
+                   </div>
                      <div>
-                         <input type="button" class="btn btn-success" onclick="save()" value="회원가입">
+                         <input type="button" id="savebutton" class="btn btn-success" onclick="save()" value="회원가입">
                      </div>
                  </div>
+                    </div>
+                    </div>
 
              </form>
          </div>
@@ -216,6 +254,28 @@
              }
            }
        })
+    }
+    const passwordCk = () => {
+     const memberPass = document.getElementById("memberPassword").value;
+     const exp =/^(?=.*[a-z])(?=.*\d)(?=.*[!@#$])[A-Z a-z \d !@#$]{8,15}$/;
+     if(memberPass.match (exp)){
+         passwordck.innerHTML = "사용가능한 비밀번호입니다."
+         passwordck.style.color="green"
+     }else{
+         passwordck.innerHTML="영어 소문자,숫자,특수문자(!@#$)를 포함한 8-15자인지 확인해주세요."
+         passwordck.style.color = "red"
+     }
+    }
+    const mobileCk = () => {
+        const memberMobile = document.getElementById("memberMobile").value;
+        const exp =/^\d{3}-\d{4}-\d{4}$/;
+        if(memberMobile .match(exp)){
+            mobileck.innerHTML="사용가능한 전화번호입니다."
+            mobileck.style.color = "green"
+        }else{
+            mobileck.innerHTML="전화번호 형식이 맞는지 확인해주세요."
+            mobileck.style.color = "red"
+        }
     }
 </script>
 </html>
