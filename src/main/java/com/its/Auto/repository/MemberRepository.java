@@ -14,4 +14,7 @@ public class MemberRepository {
 
     public String emailCk(String memberEmail) { return sql.selectOne(("member.emailCk"),memberEmail);
     }
+    public MemberDTO login(MemberDTO memberDTO) {
+        return sql.selectOne(("member.login"),memberDTO);
+    }
 }

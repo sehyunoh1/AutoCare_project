@@ -14,4 +14,8 @@ public class MemberService {
 
     public String emailCk(String memberEmail){return memberRepository.emailCk(memberEmail);}
 
+    public MemberDTO login(MemberDTO memberDTO){
+    return memberRepository.login(memberDTO);
+    }
+
 }

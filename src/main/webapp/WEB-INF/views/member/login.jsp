@@ -97,7 +97,7 @@
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container">
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form action="/member/login" method="post" name="login">
         <h1 class="h3 mb-3 mt-3 fw-normal">LOGIN</h1>
        <div id="member">
         <div class="form-floating">
@@ -116,7 +116,11 @@
 </body>
 <script>
    const submit = () => {
-     
+     if(document.getElementById("memberEmail").value =="" || document.getElementById("memberPassword").value == ""){
+         alert("이메일 및 비밀번호를 확인해주세요.")
+     }else{
+         document.login.submit();
+     }
    } 
 </script>
 </html>

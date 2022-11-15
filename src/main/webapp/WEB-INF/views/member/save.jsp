@@ -55,7 +55,7 @@
                  </div>
                  <div class="col-12 mb-3">
                      <label for="memberPassword">비밀번호</label>
-                     <input type="text" class="form-control" name="memberPassword" id="memberPassword" placeholder="8-15자의 영어 소문자,숫자,특수문자로 조합해주세요." onblur="passwordCk()">
+                     <input type="password" class="form-control" name="memberPassword" id="memberPassword" placeholder="8-15자의 영어 소문자,숫자,특수문자로 조합해주세요." onblur="passwordCk()">
                      <span id="passwordck"></span>
                  </div>
                  <div class="col-12 mb-3">
