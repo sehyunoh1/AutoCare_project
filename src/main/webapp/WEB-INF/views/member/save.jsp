@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css/">
     <script src="/resources/js/jquery.js"></script>
     <style>
-
+        h2{
+            font-size: 50px;
+        }
         #memberName,#memberPassword,#memberEmail,#sample3_detailAddress,#sample3_extraAddress{
             width: 410px;
         }
@@ -36,11 +38,11 @@
     </style>
 </head>
 <body>
-<%--<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>--%>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
  <div class="container m-lg-auto">
      <main>
        <div>
-            <h2 class="mb-4">회원가입</h2>
+            <h2 class="mb-4 text-center">회원가입</h2>
        </div>
        <div class="row g-5">
          <div class="col-md-7 col-lg-8 ">

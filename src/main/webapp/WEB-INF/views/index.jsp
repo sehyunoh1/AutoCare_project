@@ -102,14 +102,12 @@
         <p class="lead"></p>
         <p class="lead">
             <a href="/member/save" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">회원가입</a>
-            <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">로그인</a>
+            <a href="/member/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">로그인</a>
         </p>
     </main>
 </div>
 </body>
 <script>
-    const save = () => {
-      location.href="/member/save";
-    }
+
 </script>
 </html>

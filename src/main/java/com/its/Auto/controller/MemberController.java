@@ -30,4 +30,6 @@ public class MemberController {
             return "no";
         }
     }
+    @GetMapping("/login")
+    public String loginform(){return "/member/login";}
 }
