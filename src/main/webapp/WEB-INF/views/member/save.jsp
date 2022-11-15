@@ -4,6 +4,7 @@
 <head>
     <title>회원가입</title>
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css/">
+    <script src="/resources/js/jquery.js"></script>
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
@@ -18,7 +19,7 @@
              <form action="/member/save" method="post" name="saveform">
                  <div class="row-cols-sm-6">
                      <label for="memberEmail" class="form-label">이메일</label>
-                     <input type="text" class="form-control" name="memberEmail" id="memberEmail" placeholder="이메일을 입력해주세요.">
+                     <input type="text" class="form-control" name="memberEmail" id="memberEmail" placeholder="이메일을 입력해주세요." onblur="emailCk()">
                      <span id="emailCk"></span>
                  </div>
                  <div class="col-12">
@@ -197,6 +198,24 @@
             alert("회원가입이 완료되었습니다.")
         }
         }
-
+    const emailCk =() =>{
+        memberEmail =document.getElementById("memberEmail").value;
+        emaildb = document.getElementById("emailCk");
+       $.ajax({
+            type:"post",
+            url:"/member/duplicate",
+            data:{memberEmail,memberEmail},
+            dataType:"text",
+           success: function (result){
+             if(result == "ok"){
+                 emaildb.innerHTML="사용가능한 이메일입니다."
+                 emaildb.style.color="green"
+             }else if(result == "no"){
+                 emaildb.innerHTML="이미 사용중인 이메일입니다."
+                 emaildb.style.color="red"
+             }
+           }
+       })
+    }
 </script>
 </html>

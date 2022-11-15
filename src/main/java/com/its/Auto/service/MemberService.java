@@ -11,4 +11,7 @@ public class MemberService {
     private MemberRepository memberRepository;
 
     public void save(MemberDTO memberDTO){memberRepository.save(memberDTO);}
+
+    public String emailCk(String memberEmail){return memberRepository.emailCk(memberEmail);}
+
 }

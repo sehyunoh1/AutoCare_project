@@ -8,6 +8,9 @@
     insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberAdress,carModel,carYear)
             values (#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberAdress},#{carModel},#{carYear})
 </insert>
+<select id="emailCk" parameterType="String" resultType="String">
+    select memberEmail from member_table where memberEmail = #{memberEmail}
+</select>
 </mapper>
 
 

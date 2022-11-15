@@ -4,10 +4,7 @@ import com.its.Auto.dto.MemberDTO;
 import com.its.Auto.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member")
@@ -23,5 +20,14 @@ public class MemberController {
         System.out.println("memberDTO = " + memberDTO);
         memberService.save(memberDTO);
         return "/member/login";
+    }
+    @PostMapping("/duplicate")
+    public @ResponseBody String emailCk(String memberEmail){
+        String result = memberService.emailCk(memberEmail);
+        if(result == null) {
+            return "ok";
+        } else {
+            return "no";
+        }
     }
 }
