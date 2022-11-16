@@ -1,15 +1,13 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
+<html lang="ko" class="h-100"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="Mark Otto, Jacob Thornton, 그리고 Bootstrap 기여자들">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Auto Care Service </title>
-
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css/">
+    <title>Auto Care Service</title>
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/cover/">
 
 
 
@@ -84,12 +82,12 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
 </head>
-
 <body class="d-flex h-100 text-center text-bg-dark">
+
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
         <div>
-            <h3 class="float-md-start mb-0">Auto Care Service</h3>
+            <h3 class="float-md-start mb-0">Auto care Service</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
                 <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
                 <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
@@ -97,17 +95,24 @@
             </nav>
         </div>
     </header>
+
     <main class="px-3">
-        <h1>간편하게 진행하는 정비 예약.</h1>
-        <p class="lead"></p>
+        <h1>빠르게 예약해보세요.</h1>
+        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
         <p class="lead">
-            <a href="/member/save" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">회원가입</a>
-            <a href="/member/login" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">로그인</a>
+            <a href="/member/save" class="btn btn-lg btn-secondary fw-bold border-white ">회원 가입</a>
+            <a href="/member/login" class="btn btn-lg btn-secondary fw-bold border-white ">로그인</a>
         </p>
     </main>
-</div>
-</body>
-<script>
 
-</script>
+    <footer class="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
+</div>
+
+
+
+
+
+</body>
 </html>
