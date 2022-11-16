@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="ko" class="h-100"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,12 +98,32 @@
     </header>
 
     <main class="px-3">
+       <c:choose>
+        <c:when test="${sessionScope.member.memberEmail != null}">
+            <h1>${sessionScope.member.memberName}님 반갑습니다.</h1>
+<%--            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>--%>
+            <p class="lead">
+                <a href="/member/member?="+${sessionScope.member.id} class="btn btn-lg btn-secondary fw-bold border-white ">마이페이지</a>
+                <a href="/reservation/save" class="btn btn-lg btn-secondary fw-bold border-white ">정비 예약</a>
+            </p>
+         <c:if test="${sessionScope.member.memberName == admin}">
+             <h1>Admin Page</h1>
+             <%--            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>--%>
+             <p class="lead">
+                 <a href="/member/member?="+${sessionScope.member.id} class="btn btn-lg btn-secondary fw-bold border-white ">회원 목록</a>
+                 <a href="/reservation/save" class="btn btn-lg btn-secondary fw-bold border-white ">전체 예약리스트</a>
+             </p>
+         </c:if>
+        </c:when>
+        <c:otherwise>
         <h1>빠르게 예약해보세요.</h1>
         <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
         <p class="lead">
             <a href="/member/save" class="btn btn-lg btn-secondary fw-bold border-white ">회원 가입</a>
             <a href="/member/login" class="btn btn-lg btn-secondary fw-bold border-white ">로그인</a>
         </p>
+        </c:otherwise>
+       </c:choose>
     </main>
 
     <footer class="mt-auto text-white-50">
