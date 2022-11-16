@@ -16,4 +16,5 @@ public class MemberDTO {
     private String memberAdress;
     private String carModel;
     private int carYear;
+    private String carNumber;
 }

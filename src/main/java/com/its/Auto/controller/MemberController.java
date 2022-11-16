@@ -42,7 +42,7 @@ public class MemberController {
       session.setAttribute("member",result);
       model.addAttribute(("member"),result);
         if(result != null) {
-          return "/member/main";
+          return "index";
       }else {
             return "/member/login";
         }

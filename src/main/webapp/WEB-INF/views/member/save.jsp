@@ -3,13 +3,13 @@
 <html>
 <head>
     <title>회원가입</title>
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css/">
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css/">
     <script src="/resources/js/jquery.js"></script>
     <style>
         h2{
             font-size: 50px;
         }
-        #memberName,#memberPassword,#memberEmail,#sample3_detailAddress,#sample3_extraAddress{
+        #memberName,#memberPassword,#memberEmail,#sample3_detailAddress,#sample3_extraAddress,#carNumber{
             width: 410px;
         }
         #memberMobile{
@@ -167,8 +167,6 @@
             // iframe을 넣은 element를 보이게 한다.
             element_wrap.style.display = 'block';
         }
-
-
     </script>
                      </div>
                    <div class="row mt-3">
@@ -209,6 +207,9 @@
                          </select>
                      </div>
                    </div>
+                    <div>
+                        <input type="text" name="carNumber" class="form-control" id="carNumber">
+                    </div>
                      <div>
                          <input type="button" id="savebutton" class="btn btn-success" onclick="save()" value="회원가입">
                      </div>

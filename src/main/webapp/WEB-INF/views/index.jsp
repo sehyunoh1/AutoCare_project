@@ -96,7 +96,6 @@
             </nav>
         </div>
     </header>
-
     <main class="px-3">
        <c:choose>
         <c:when test="${sessionScope.member.memberEmail != null}">
