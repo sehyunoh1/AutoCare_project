@@ -13,5 +13,5 @@ public class ReservationController {
     private ReservationService reservationService;
 
     @GetMapping("/save")
-    public String saveform(){return "/reservation/save"; }
+    public String saveform(){return "/reservation/resSave"; }
 }

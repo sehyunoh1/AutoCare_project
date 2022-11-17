@@ -19,6 +19,38 @@
         <h4>온라인 예약으로 고객님이 원하는 장소와 시간에 차량관리를 받을수 있습니다.</h4>
       <form action="/reservation/save" method="post" name="resform">
          <div id="CC">
+             <div id="serviceDate" name="serviceDate" class="mt-5">
+                 <input class="datepicker form-control" placeholder="날짜를 선택해주세요.">
+                 <div id="date1">
+                     <script>
+                         $.datepicker.setDefaults({
+                             dateFormat: 'yy-mm-dd',
+                             prevText: '이전 달',
+                             nextText: '다음 달',
+                             monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                             monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                             dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                             dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                             showMonthAfterYear: true,
+                             yearSuffix: '년'
+                         })
+                         // $(function () {
+                         //     $('.datepicker').datepicker();
+                         // });
+                         $( function() {
+                             $( ".datepicker" ).datepicker({
+                                 onSelect: function() {
+                                     var date = $.datepicker.formatDate("yy-mm-dd",$(".datepicker").datepicker("getDate"));
+                                     document.getElementById("serviceDate").value=date;
+                                     console.log( document.getElementById("serviceDate").value)
+                                 }
+                             });
+                         });
+
+                     </script>
+                 </div>
+             </div>
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="경정비" onclick="ab()">
               <label class="form-check-label" for="inlineRadio1">경정비</label>
@@ -43,13 +75,9 @@
           <div id="serviceCenter" name="serviceCenter" class="mt-5">
 
           </div>
-          <div id="serviceDate" name="serviceDate" class="mt-5">
-
-
-          </div>
 
           <div class="mt-4">
-              <input type="button" class="btn btn-secondary" value="예약하기">
+              <input type="button" class="btn btn-secondary" value="예약하기" onclick="save()">
           </div>
 
       </form>
@@ -107,46 +135,29 @@
         detail.value = detailCk;
       console.log(detail.value)
 
-        let servicecenter = "<select class=form-select id=servicecenter onchange=servicecenter()>"
-        servicecenter += "<option value=강남서비스센터>강남서비스센터</option>"
-        servicecenter += "<option value=용산서비스센터>용산서비스센터</option>"
-        servicecenter += "<option value=송도서비스센터>송도서비스센터</option>"
-        servicecenter += "<option value=수원서비스센터>수원서비스센터</option>"
-        servicecenter += "<option value=대전서비스센터>대전서비스센터</option>"
-        servicecenter += "<option value=대전서비스센터>울산서비스센터</option>"
-        servicecenter += "<option value=대전서비스센터>대구서비스센터</option>"
-        servicecenter += "<option value=대전서비스센터>부산서비스센터</option>"
-        servicecenter +="</select>"
-        document.getElementById("serviceCenter").innerHTML=servicecenter
+        let servicecenter1 = "<select class=form-select id='servicecenter' onchange=center() placeholder='서비스센터를 선택해주세요'>"
+        servicecenter1 += "<option value=강남서비스센터>강남서비스센터</option>"
+        servicecenter1 += "<option value=용산서비스센터>용산서비스센터</option>"
+        servicecenter1 += "<option value=송도서비스센터>송도서비스센터</option>"
+        servicecenter1 += "<option value=수원서비스센터>수원서비스센터</option>"
+        servicecenter1 += "<option value=대전서비스센터>대전서비스센터</option>"
+        servicecenter1 += "<option value=대전서비스센터>울산서비스센터</option>"
+        servicecenter1 += "<option value=대전서비스센터>대구서비스센터</option>"
+        servicecenter1 += "<option value=대전서비스센터>부산서비스센터</option>"
+        servicecenter1 +="</select>"
+        document.getElementById("serviceCenter").innerHTML=servicecenter1
     }
-    const servicecenter = () => {
+    const center = () => {
       const servicecenterCK = document.getElementById("servicecenter").value;
       const servicecenter = document.getElementById("serviceCenter")
         servicecenter.value=servicecenterCK;
         console.log(servicecenter.value)
 
-        let servicedate = "<input type='text' class='form-control datepicker' id=servicedate >"
-        servicedate+="<script>"
-
-        servicedate += $.datepicker.setDefaults({
-            dateFormat: 'yy-mm-dd',
-            prevText: '이전 달',
-            nextText: '다음 달',
-            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-            showMonthAfterYear: true,
-            yearSuffix: '년'
-        })
-        $(function () {
-            $('.datepicker').datepicker();
-        });
-        servicedate += "</script>"
-        document.getElementById("serviceDate").innerHTML = servicedate;
     }
 
+const save = () => {
+  document.getElementById("resform").submit();
+}
 
 </script>
 </html>
