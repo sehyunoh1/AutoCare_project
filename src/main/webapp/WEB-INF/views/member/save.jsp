@@ -83,7 +83,6 @@
                     <div class="row">
                      <div class="col-12 mb-3">
                          <label for="sample3_address">주소</label>
-<%--                         <input type="text" class="form-control" name="memberAdress" id="memberAdress" placeholder="주소를 입력해주세요">--%>
     <input type="text" id="sample3_postcode" placeholder="우편번호" class="form-control"><div class="col">
     <input type="button" id="addressSearch" onclick="sample3_execDaumPostcode()" value="우편번호 찾기" class="form-select"><br>
     <input type="text" name =memberAdress id="sample3_address" class="form-control" placeholder="주소"><br>
