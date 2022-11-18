@@ -21,6 +21,7 @@
     <div id="member" class="mt-3">
       <form action="/member/update" method="post" name="updateform">
       <table class="table table-hover">
+        <input type="hidden" name="id" value="${sessionScope.member.id}">
         <tr>
           <th>이름</th>
           <td><input type="text" class="form-control" name="memberName" id="memberName" value="${sessionScope.member.memberName}"></td>
@@ -187,8 +188,16 @@
           </td>
         </tr>
       </table>
+        <div class="mt-4">
+        <input type="button" class="btn btn-primary" onclick="update()">
+        </div>
       </form>
     </div>
 </div>
 </body>
+<script>
+  const update = () => {
+      document.updateform.submit();
+  }
+</script>
 </html>

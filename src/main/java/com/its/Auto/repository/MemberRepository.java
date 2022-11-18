@@ -19,4 +19,5 @@ public class MemberRepository {
     }
 
     public MemberDTO detail(Long id){return sql.selectOne(("member.detail"),id);}
+    public int update(MemberDTO memberDTO){return sql.update(("member.update"),memberDTO);}
 }

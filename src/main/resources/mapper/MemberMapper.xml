@@ -5,8 +5,8 @@
 
 <mapper namespace="member">
 <insert id="save" parameterType="member">
-    insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberAdress,carModel,carYear)
-            values (#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberAdress},#{carModel},#{carYear})
+    insert into member_table(memberEmail,memberPassword,memberName,memberMobile,memberAdress,carModel,carYear,carNumber)
+            values (#{memberEmail},#{memberPassword},#{memberName},#{memberMobile},#{memberAdress},#{carModel},#{carYear},#{carNumber})
 </insert>
 <select id="emailCk" parameterType="String" resultType="String">
     select memberEmail from member_table where memberEmail = #{memberEmail}
@@ -17,6 +17,10 @@
 <select id="detail" parameterType="Long" resultType="member">
     select * from member_table where id=#{id};
 </select>
+<update id="update" parameterType="member">
+    update member_table set memberName=#{memberName},memberMobile=#{memberMobile},memberAdress=#{memberAdress},carModel=#{carModel},carYear=#{carYear},carNumber=#{carNumber}
+        where id=#{id}
+</update>
 </mapper>
 
 

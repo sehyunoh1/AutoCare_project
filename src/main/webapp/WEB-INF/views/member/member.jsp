@@ -15,27 +15,27 @@
       <table class="table table-hover">
           <tr>
             <th>이름</th>
-            <td>${sessionScope.member.memberName}</td>
+            <td>${member.memberName}</td>
           </tr>
           <tr>
             <th>이메일</th>
-            <td>${sessionScope.member.memberEmail}</td>
+            <td>${member.memberEmail}</td>
           </tr>
           <tr>
             <th>전화번호</th>
-            <td>${sessionScope.member.memberMobile}</td>
+            <td>${member.memberMobile}</td>
           </tr>
           <tr>
             <th>차량모델</th>
-            <td>${sessionScope.member.carModel}</td>
+            <td>${member.carModel}</td>
           </tr>
           <tr>
             <th>차량연식</th>
-            <td>${sessionScope.member.carYear}</td>
+            <td>${member.carYear}</td>
           </tr>
           <tr>
               <th>차량 번호</th>
-              <td>${sessionScope.member.carNumber}</td>
+              <td>${member.carNumber}</td>
             </tr>
       </table>
     </div>

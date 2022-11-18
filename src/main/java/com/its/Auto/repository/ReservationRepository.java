@@ -11,4 +11,6 @@ public class ReservationRepository {
     private SqlSessionTemplate sql;
 
     public void save(ReservationDTO reservationDTO){sql.insert(("reservation.save"),reservationDTO);}
+
+
 }

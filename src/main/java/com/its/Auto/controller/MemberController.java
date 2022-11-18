@@ -54,5 +54,16 @@ public class MemberController {
         return "/member/member";
     }
     @GetMapping("/update")
-    public String update(){ return "/member/update";}
+    public String updateform(){ return "/member/update";}
+
+    @PostMapping("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO,Model model ){
+       boolean result= memberService.update(memberDTO);
+        model.addAttribute("member",memberDTO);
+       if(result == true){
+           return "redirect:/member/member?id="+memberDTO.getId();
+       }else{
+           return "/member/update";
+       }
+    }
 }
