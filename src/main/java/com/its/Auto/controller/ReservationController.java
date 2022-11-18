@@ -21,6 +21,7 @@ public class ReservationController {
     @PostMapping("/save")
     public String save(@ModelAttribute ReservationDTO reservationDTO){
         System.out.println("reservationDTO = " + reservationDTO);
-        return null;
+        reservationService.save(reservationDTO);
+        return "index";
     }
 }

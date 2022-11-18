@@ -17,4 +17,6 @@ public class MemberRepository {
     public MemberDTO login(MemberDTO memberDTO) {
         return sql.selectOne(("member.login"),memberDTO);
     }
+
+    public MemberDTO detail(Long id){return sql.selectOne(("member.detail"),id);}
 }

@@ -18,4 +18,6 @@ public class MemberService {
     return memberRepository.login(memberDTO);
     }
 
+    public MemberDTO detail(Long id){return memberRepository.detail(id);}
+
 }

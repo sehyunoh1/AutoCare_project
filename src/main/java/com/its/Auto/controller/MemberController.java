@@ -47,4 +47,10 @@ public class MemberController {
             return "/member/login";
         }
     }
+    @GetMapping("/member")
+    public String detail(Long id,Model model){
+        MemberDTO member = memberService.detail(id);
+        model.addAttribute("member",member);
+        return "/member/member";
+    }
 }
