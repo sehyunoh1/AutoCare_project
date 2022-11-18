@@ -1,6 +1,7 @@
 package com.its.Auto.controller;
 
 import com.its.Auto.dto.MemberDTO;
+import com.its.Auto.dto.ReservationDTO;
 import com.its.Auto.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/member")
@@ -65,5 +67,13 @@ public class MemberController {
        }else{
            return "/member/update";
        }
+    }
+    @GetMapping("/list")
+    public String list(Long id, Model model){
+        System.out.println(id);
+        List<MemberDTO> resList= memberService.list(id);
+        System.out.println("resList = " + resList);
+        model.addAttribute("reslist",resList);
+        return "/member/reslist";
     }
 }

@@ -8,6 +8,7 @@
     insert into reservation_table(category,subcategory,detail,serviceCenter,serviceDate,delivery,memberId)
         values(#{category},#{subcategory},#{detail},#{serviceCenter},#{serviceDate},#{delivery},#{memberId})
 </insert>
+
 </mapper>
 
 
