@@ -53,4 +53,6 @@ public class MemberController {
         model.addAttribute("member",member);
         return "/member/member";
     }
+    @GetMapping("/update")
+    public String update(){ return "/member/update";}
 }

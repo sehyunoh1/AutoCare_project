@@ -3,7 +3,7 @@
 <html>
 <head>
 
-  <title>${sessionScope.member.memberName} 마이페이지</title>
+  <title>${sessionScope.member.memberName}님 마이페이지</title>
   <link rel="stylesheet" href="/resources/css/bootstrap.min.css/">
   <script src="/resources/js/jquery.js"></script>
 
@@ -43,7 +43,6 @@
           <a href="/member/list" class="btn btn-secondary">예약내역 확인</a>
           <a href="/member/update" class="btn btn-primary">회원정보 수정</a>
           <a href="/member/delete" class="btn btn-danger">회원탈퇴</a>
-
       </div>
   </div>
 
