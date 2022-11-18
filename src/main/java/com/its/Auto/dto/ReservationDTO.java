@@ -15,7 +15,7 @@ public class ReservationDTO {
     private String subcategory;
     private String detail;
     private String serviceCenter;
-    private Timestamp serviceDate;
+    private String serviceDate;
     private Timestamp serviceTime;
     private boolean delivery;
     private Long memberId;

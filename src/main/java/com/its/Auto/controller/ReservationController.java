@@ -16,7 +16,7 @@ public class ReservationController {
     private ReservationService reservationService;
 
     @GetMapping("/save")
-    public String saveform(){return "/reservation/reservationSave"; }
+    public String saveform(){return "/reservation/ResSave"; }
 
     @PostMapping("/save")
     public String save(@ModelAttribute ReservationDTO reservationDTO){
