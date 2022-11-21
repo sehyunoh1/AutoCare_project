@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -16,38 +17,54 @@
 
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
-                    <a href="#" class="nav-link text-secondary">
+                    <a href="/" class="nav-link text-secondary">
                         <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                        Dashboard
-                    </a>
+                 <c:choose>
+                   <c:when test="${sessionScope.member.memberEmail != null}">
+<%--                        <a href="/member/list?id=${sessionScope.member.id}" class="nav-link text-white">--%>
+<%--                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>--%>
+<%--                            예약내역--%>
+<%--                        </a>--%>
+                       <button type="button" class="btn btn-secondary position-relative mt-3" onclick="list()">
+                           예약 내역
+                           <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                        <span class="visually-hidden">New alerts</span>
+                          </span>
+                       </button>
+                   </c:when>
+                   <c:otherwise>
+                       <a href="/member/save" class="nav-link text-white">
+                           <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                           회원가입
+                       </a>
+                   </c:otherwise>
+                 </c:choose>
                 </li>
                 <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                        Orders
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                        Products
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                        Customers
-                    </a>
+                   <c:choose>
+                    <c:when test="${sessionScope.member.memberEmail != null}">
+                        <a href="/logout" class="nav-link text-white">
+                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                            로그아웃
+                        </a>
+                    </c:when>
+                   </c:choose>
+                    <c:if test="">
+
+                    </c:if>
                 </li>
             </ul>
         </div>
     </div>
 </div>
 </body>
+<script>
+    const list = () => {
+      location.href="/member/list?id="+${sessionScope.member.id};
+    }
+</script>
 </html>

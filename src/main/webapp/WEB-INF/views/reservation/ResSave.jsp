@@ -92,8 +92,6 @@
         </div>
             <div class="mt-5">
               <input  class="datepicker form-control" placeholder="날짜를 선택해주세요." id="datepicker" name="serviceDate" onclick="date()" >
-              <script>
-              </script>
             </div>
         <div id="deliverydiv" class="mt-5">
           <div>
