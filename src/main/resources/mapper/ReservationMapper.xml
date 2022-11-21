@@ -8,7 +8,9 @@
     insert into reservation_table(category,subcategory,detail,serviceCenter,serviceDate,delivery,memberId)
         values(#{category},#{subcategory},#{detail},#{serviceCenter},#{serviceDate},#{delivery},#{memberId})
 </insert>
-
+<select id="reslist" parameterType="Long" resultType="reservation">
+    select * from member_table m , reservation_table r where m.id=r.memberID and  r.memberId=#{id}
+</select>
 </mapper>
 
 

@@ -2,6 +2,7 @@ package com.its.Auto.service;
 
 import com.its.Auto.dto.MemberDTO;
 import com.its.Auto.dto.ReservationDTO;
+import com.its.Auto.dto.member_resDTO;
 import com.its.Auto.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,6 @@ public class MemberService {
        }
 
     }
-    public List<MemberDTO> list(Long id){ return memberRepository.list(id);}
+    public List<member_resDTO> list(Long id){ return memberRepository.list(id);}
+
 }

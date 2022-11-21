@@ -2,6 +2,7 @@ package com.its.Auto.controller;
 
 import com.its.Auto.dto.MemberDTO;
 import com.its.Auto.dto.ReservationDTO;
+import com.its.Auto.dto.member_resDTO;
 import com.its.Auto.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -69,11 +70,12 @@ public class MemberController {
        }
     }
     @GetMapping("/list")
-    public String list(Long id, Model model){
-        System.out.println(id);
-        List<MemberDTO> resList= memberService.list(id);
-        System.out.println("resList = " + resList);
-        model.addAttribute("reslist",resList);
+    public String list(@RequestParam Long id, Model model) {
+        List<member_resDTO> list = memberService.list(id);
+        System.out.println("list = " + list);
+        model.addAttribute("list", list);
         return "/member/reslist";
     }
+
+
 }

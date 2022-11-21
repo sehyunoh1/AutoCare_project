@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css/">
@@ -21,16 +22,18 @@
       <th>카테고리</th>
       <th>예약 날짜</th>
     </tr>
-    <tr>
-      <td>${reslist.resId}</td>
-      <td>${reslist.memberName}</td>
-      <td>${reslist.memberMobile}</td>
-      <td>${reslist.carModel}</td>
-      <td>${reslist.carYear}</td>
-      <td>${reslist.carNumber}</td>
-      <td>${reslist.category}</td>
-      <td>${reslist.serviceDate}</td>
+   <c:forEach items="${list}" var="list">
+      <tr>
+        <td>${list.resId}</td>
+        <td>${list.memberName}</td>
+        <td>${list.memberMobile}</td>
+        <td>${list.carModel}</td>
+        <td>${list.carYear}</td>
+        <td>${list.carNumber}</td>
+        <td>${list.category}</td>
+        <td>${list.serviceDate}</td>
     </tr>
+   </c:forEach>
   </table>
 </div>
 </body>

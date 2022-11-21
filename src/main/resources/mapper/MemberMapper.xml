@@ -21,8 +21,8 @@
     update member_table set memberName=#{memberName},memberMobile=#{memberMobile},memberAdress=#{memberAdress},carModel=#{carModel},carYear=#{carYear},carNumber=#{carNumber}
         where id=#{id}
 </update>
-    <select id="list" parameterType="Long" resultType="member">
-        select  from member_table m, reservation_table r  where m.id= r.memberId and m.id=#{id};
+    <select id="list" parameterType="Long" resultType="member_res">
+        select m.*,r.*  from member_table m, reservation_table r  where m.id = r.memberId and m.id=#{id};
     </select>
 </mapper>
 
