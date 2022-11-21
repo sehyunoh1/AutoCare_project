@@ -21,4 +21,13 @@ public class ReservationService {
 
     public member_resDTO detail(Long resId) { return reservationRepository.detail(resId);
     }
+
+    public boolean fin(Long resId) {
+        int result = reservationRepository.fin(resId);
+        if(result >= 1){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

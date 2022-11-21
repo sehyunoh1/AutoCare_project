@@ -14,6 +14,9 @@
     <select id="detail" parameterType="Long" resultType="member_res">
         select m.*,r.*  from member_table m, reservation_table r  where m.id = r.memberId and r.resId=#{resId}
     </select>
+<update id="fin" parameterType="Long">
+   update reservation_table set fin = true,serviceTime = now() where resId=#{resId}
+</update>
 </mapper>
 
 

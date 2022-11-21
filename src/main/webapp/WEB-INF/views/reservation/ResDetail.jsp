@@ -58,8 +58,26 @@
               </c:otherwise>
               </c:choose>
           </tr>
-
+          <tr>
+              <th>현재 상태</th>
+          <c:choose>
+              <c:when test="${detail.fin == true}">
+                  <td>작업 완료</td>
+              </c:when>
+              <c:otherwise>
+                  <td>작업 미완료</td>
+              </c:otherwise>
+          </c:choose>
+          </tr>
       </table>
+        <c:if test="${sessionScope.member.id == 4}">
+            <a href="/reservation/fin?resId=${detail.resId}">작업완료</a>
+        </c:if>
     </div>
+
+
 </body>
+<script>
+
+</script>
 </html>

@@ -21,4 +21,7 @@ public class ReservationRepository {
 
     public member_resDTO detail(Long resId) { return sql.selectOne(("reservation.detail"),resId);
     }
+
+    public int fin(Long resId) { return sql.update(("reservation.fin"),resId);
+    }
 }

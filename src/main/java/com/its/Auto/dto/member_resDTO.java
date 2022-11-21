@@ -22,4 +22,5 @@ public class member_resDTO {
     private String delivery;
     private String serviceDate;
     private String serviceTime;
+    private boolean fin;
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
-<div class="container">
+<div class="container mt-5">
   <table class="table table-hover">
     <tr>
       <th>예약 번호</th>

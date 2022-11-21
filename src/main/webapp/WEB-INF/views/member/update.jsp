@@ -189,7 +189,7 @@
         </tr>
       </table>
         <div class="mt-4">
-        <input type="button" class="btn btn-primary" onclick="update()">
+        <input type="button" class="btn btn-primary" onclick="update()" value="회원정보 수정">
         </div>
       </form>
     </div>

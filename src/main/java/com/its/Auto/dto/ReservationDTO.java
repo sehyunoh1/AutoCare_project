@@ -18,5 +18,6 @@ public class ReservationDTO {
     private String serviceDate;
     private Timestamp serviceTime;
     private boolean delivery;
+    private boolean fin;
     private Long memberId;
 }

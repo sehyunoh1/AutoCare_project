@@ -28,11 +28,20 @@ public class ReservationController {
     @GetMapping("/reservation")
     public String detail(@RequestParam Long resId,Model model){
        member_resDTO DTO= reservationService.detail(resId);
-        System.out.println(resId);
-        System.out.println("DTO = " + DTO);
        model.addAttribute("detail",DTO);
        return "/reservation/ResDetail";
     }
-
+    @GetMapping("/fin")
+    public String fin(@RequestParam Long resId, Model model){
+        System.out.println("resId = " + resId );
+       boolean result= reservationService.fin(resId);
+       member_resDTO resDTO = reservationService.detail(resId);
+       model.addAttribute("detail",resDTO);
+       if(result == true){
+           return "redirect:/reservation/reservation?resId="+resDTO.getResId();
+       }else {
+           return "/reservation/ResDetail";
+       }
+    }
 
 }

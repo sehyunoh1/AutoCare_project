@@ -207,7 +207,7 @@
                      </div>
                    </div>
                     <div>
-                        <input type="text" name="carNumber" class="form-control" id="carNumber">
+                        <input type="text" name="carNumber" class="form-control" id="carNumber" placeholder="차량번호를 입력해주세요.">
                     </div>
                      <div>
                          <input type="button" id="savebutton" class="btn btn-success" onclick="save()" value="회원가입">
