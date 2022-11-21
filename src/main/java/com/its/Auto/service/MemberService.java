@@ -37,4 +37,7 @@ public class MemberService {
 
     public void delete(Long id) {  memberRepository.delete(id);
     }
+
+    public List<MemberDTO> memberList() { return memberRepository.memberList();
+    }
 }

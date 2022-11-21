@@ -25,8 +25,11 @@
         select m.*,r.*  from member_table m, reservation_table r  where m.id = r.memberId and m.id=#{id};
     </select>
 <delete id="delete" parameterType="Long">
-    delete  from member_table;
+    delete  from member_table where id=#{id};
 </delete>
+<select id="memberList" resultType="member">
+select * from member_table
+</select>
 </mapper>
 
 

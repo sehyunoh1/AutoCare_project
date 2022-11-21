@@ -105,12 +105,12 @@
                 <a href="/member/member?id="+${sessionScope.member.id} class="btn btn-lg btn-secondary fw-bold border-white ">마이페이지</a>
                 <a href="/reservation/save" class="btn btn-lg btn-secondary fw-bold border-white ">정비 예약</a>
             </p>
-         <c:if test="${sessionScope.member.memberName == admin}">
+         <c:if test="${sessionScope.member.id == 4}">
              <h1>Admin Page</h1>
              <%--            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>--%>
              <p class="lead">
-                 <a href="/member/member?="+${sessionScope.member.id} class="btn btn-lg btn-secondary fw-bold border-white ">회원 목록</a>
-                 <a href="/reservation/save" class="btn btn-lg btn-secondary fw-bold border-white ">전체 예약리스트</a>
+                 <a href="/admin/member" class="btn btn-lg btn-secondary fw-bold border-white ">회원 목록</a>
+                 <a href="/admin/reservation" class="btn btn-lg btn-secondary fw-bold border-white ">전체 예약리스트</a>
              </p>
          </c:if>
         </c:when>

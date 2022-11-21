@@ -72,7 +72,7 @@ public class MemberController {
     @GetMapping("/delete")
     public String delete(@RequestParam Long id){
         memberService.delete(id);
-        return "index";
+        return "redirect:/";
     }
     @GetMapping("/list")
     public String list(@RequestParam Long id, Model model) {
@@ -81,6 +81,5 @@ public class MemberController {
         model.addAttribute("list", list);
         return "/member/reslist";
     }
-
 
 }
