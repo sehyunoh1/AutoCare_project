@@ -35,4 +35,6 @@ public class MemberService {
     }
     public List<member_resDTO> list(Long id){ return memberRepository.list(id);}
 
+    public void delete(Long id) {  memberRepository.delete(id);
+    }
 }

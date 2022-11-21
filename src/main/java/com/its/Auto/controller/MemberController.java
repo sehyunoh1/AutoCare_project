@@ -69,6 +69,11 @@ public class MemberController {
            return "/member/update";
        }
     }
+    @GetMapping("/delete")
+    public String delete(@RequestParam Long id){
+        memberService.delete(id);
+        return "index";
+    }
     @GetMapping("/list")
     public String list(@RequestParam Long id, Model model) {
         List<member_resDTO> list = memberService.list(id);
