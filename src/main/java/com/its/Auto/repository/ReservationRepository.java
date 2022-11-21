@@ -1,6 +1,7 @@
 package com.its.Auto.repository;
 
 import com.its.Auto.dto.ReservationDTO;
+import com.its.Auto.dto.member_resDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,4 +16,6 @@ public class ReservationRepository {
     public void save(ReservationDTO reservationDTO){sql.insert(("reservation.save"),reservationDTO);}
 
 
+    public List<member_resDTO> list() { return sql.selectList(("reservation.list"));
+    }
 }

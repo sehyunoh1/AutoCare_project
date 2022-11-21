@@ -1,6 +1,8 @@
 package com.its.Auto.controller;
 
 import com.its.Auto.dto.MemberDTO;
+import com.its.Auto.dto.ReservationDTO;
+import com.its.Auto.dto.member_resDTO;
 import com.its.Auto.service.MemberService;
 import com.its.Auto.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +26,11 @@ public class AdminController {
         List<MemberDTO> memberList =memberService.memberList();
         model.addAttribute("memberList",memberList);
         return "/admin/member";
+    }
+    @GetMapping("/reservation")
+    public String reservation(Model model){
+        List<member_resDTO> reservationList = reservationService.list();
+        model.addAttribute(("resList"),reservationList);
+        return "/admin/reservation";
     }
 }

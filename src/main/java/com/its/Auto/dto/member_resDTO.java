@@ -17,5 +17,9 @@ public class member_resDTO {
     private String carYear;
     private String carNumber;
     private String category;
+    private String subcategory;
+    private String detail;
+    private String delivery;
     private String serviceDate;
+    private String serviceTime;
 }
