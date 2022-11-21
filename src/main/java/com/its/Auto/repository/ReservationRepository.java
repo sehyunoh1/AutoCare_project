@@ -18,4 +18,7 @@ public class ReservationRepository {
 
     public List<member_resDTO> list() { return sql.selectList(("reservation.list"));
     }
+
+    public member_resDTO detail(Long resId) { return sql.selectOne(("reservation.detail"),resId);
+    }
 }

@@ -19,4 +19,6 @@ public class ReservationService {
     }
 
 
+    public member_resDTO detail(Long resId) { return reservationRepository.detail(resId);
+    }
 }

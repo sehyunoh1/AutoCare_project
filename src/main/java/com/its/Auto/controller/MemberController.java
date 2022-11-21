@@ -77,7 +77,6 @@ public class MemberController {
     @GetMapping("/list")
     public String list(@RequestParam Long id, Model model) {
         List<member_resDTO> list = memberService.list(id);
-        System.out.println("list = " + list);
         model.addAttribute("list", list);
         return "/member/reslist";
     }

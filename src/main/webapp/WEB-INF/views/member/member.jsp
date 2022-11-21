@@ -40,10 +40,9 @@
       </table>
     </div>
       <div class="mt-5" id="button">
-<%--          <a href="/member/list?id="+${sessionScope.member.id} class="btn btn-secondary">예약내역 확인</a>--%>
           <button class="btn btn-secondary" onclick="tv()">예약내역 확인</button>
           <a href="/member/update" class="btn btn-primary">회원정보 수정</a>
-          <a href="/member/delete" class="btn btn-danger">회원탈퇴</a>
+          <button class="btn btn-danger" onclick="fd()">회원탈퇴</button>
       </div>
   </div>
 
@@ -51,6 +50,9 @@
 <script>
     const tv = () => {
       location.href="/member/list?id="+${sessionScope.member.id};
+    }
+    const fd = () => {
+      location.href="/member/delete?id="+${sessionScope.member.id}
     }
 </script>
 </html>

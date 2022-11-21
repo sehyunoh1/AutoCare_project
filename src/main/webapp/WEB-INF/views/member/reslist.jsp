@@ -24,7 +24,7 @@
     </tr>
    <c:forEach items="${list}" var="list">
       <tr>
-        <td>${list.resId}</td>
+          <td><a href="/reservation/reservation?resId=${list.resId}">${list.resId}</a></td>
         <td>${list.memberName}</td>
         <td>${list.memberMobile}</td>
         <td>${list.carModel}</td>
@@ -37,4 +37,6 @@
   </table>
 </div>
 </body>
+<script>
+</script>
 </html>

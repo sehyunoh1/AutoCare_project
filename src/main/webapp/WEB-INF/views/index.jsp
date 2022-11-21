@@ -104,6 +104,7 @@
             <p class="lead">
                 <a href="/member/member?id="+${sessionScope.member.id} class="btn btn-lg btn-secondary fw-bold border-white ">마이페이지</a>
                 <a href="/reservation/save" class="btn btn-lg btn-secondary fw-bold border-white ">정비 예약</a>
+                <a href="/logout" class="btn btn-lg btn-danger fw-bold border-white ">로그아웃</a>
             </p>
          <c:if test="${sessionScope.member.id == 4}">
              <h1>Admin Page</h1>
