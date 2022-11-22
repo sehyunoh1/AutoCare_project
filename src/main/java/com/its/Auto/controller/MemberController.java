@@ -80,5 +80,13 @@ public class MemberController {
         model.addAttribute("list", list);
         return "/member/reslist";
     }
+    @GetMapping("/list/desc")
+    public String list_desc(@RequestParam Long id, Model model) {
+        System.out.println("id = " + id );
+        List<member_resDTO> list = memberService.list_desc(id);
+        System.out.println("list = " + list);
+        model.addAttribute("list", list);
+        return "/member/reslist";
+    }
 
 }

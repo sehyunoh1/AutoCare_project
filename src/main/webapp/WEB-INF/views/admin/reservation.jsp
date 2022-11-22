@@ -21,6 +21,7 @@
           <th>카테고리</th>
           <th>세부</th>
           <th>딜리버리</th>
+          <th>작업현황</th>
         </tr>
         <c:forEach items="${resList}" var="resList">
             <tr>
@@ -38,6 +39,14 @@
                     </c:when>
                     <c:otherwise>
                         <td>X</td>
+                    </c:otherwise>
+                </c:choose>
+                <c:choose>
+                    <c:when test="${resList.fin == true}">
+                        <td>완료</td>
+                    </c:when>
+                    <c:otherwise>
+                        <td>미완료</td>
                     </c:otherwise>
                 </c:choose>
                 <td><a href="/reservation/reservation?resId=${resList.resId}">세부사항 조회</a></td>

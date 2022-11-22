@@ -6,6 +6,11 @@
     <title>헤더</title>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style>
+        #res{
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
 <div class="px-3 py-2 text-bg-dark">
@@ -29,7 +34,7 @@
 <%--                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>--%>
 <%--                            예약내역--%>
 <%--                        </a>--%>
-                       <button type="button" class="btn btn-secondary position-relative mt-3" onclick="list()">
+                       <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
                            예약 내역
                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                         <span class="visually-hidden">New alerts</span>
@@ -53,9 +58,7 @@
                         </a>
                     </c:when>
                    </c:choose>
-                    <c:if test="">
 
-                    </c:if>
                 </li>
             </ul>
         </div>

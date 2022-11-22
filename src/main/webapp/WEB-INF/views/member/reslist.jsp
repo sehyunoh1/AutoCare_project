@@ -11,6 +11,8 @@
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container mt-5">
+    <button class="btn btn-secondary mt-5" onclick="desc()">날짜순↓</button>
+    <button class="btn btn-secondary mt-5" onclick="asc()">날짜순↑</button>
   <table class="table table-hover">
     <tr>
       <th>예약 번호</th>
@@ -38,5 +40,11 @@
 </div>
 </body>
 <script>
+    const desc = () => {
+    location.href="/member/list/desc?id="+${sessionScope.member.id}
+    }
+    const asc = () => {
+        location.href="/member/list?id="+${sessionScope.member.id}
+    }
 </script>
 </html>
