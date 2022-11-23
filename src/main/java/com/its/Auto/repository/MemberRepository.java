@@ -34,5 +34,8 @@ public class MemberRepository {
 
     public List<MemberDTO> memberList() { return sql.selectList(("member.memberList"));
     }
+
+    public List<MemberDTO> loginCk() { return sql.selectList(("member.loginCk"));
+    }
 }
 

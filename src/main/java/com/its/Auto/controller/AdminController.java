@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,6 +27,11 @@ public class AdminController {
         List<MemberDTO> memberList =memberService.memberList();
         model.addAttribute("memberList",memberList);
         return "/admin/member";
+    }
+    @GetMapping("/member/delete")
+    public String delete(@RequestParam Long id){
+                memberService.delete(id);
+        return "redirect:/admin/member";
     }
     @GetMapping("/reservation")
     public String reservation(Model model){

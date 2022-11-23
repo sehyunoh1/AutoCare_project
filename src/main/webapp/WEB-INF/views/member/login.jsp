@@ -116,11 +116,16 @@
 </body>
 <script>
    const submit = () => {
-     if(document.getElementById("memberEmail").value =="" || document.getElementById("memberPassword").value == ""){
-         alert("이메일 및 비밀번호를 확인해주세요.")
-     }else{
-         document.login.submit();
-     }
-   } 
+      for (let i=0 ; i<${member.size()} ; i++ ) {
+          if (document.getElementById("memberEmail").value == "" || document.getElementById("memberPassword").value == "") {
+              alert("이메일 및 비밀번호를 확인해주세요.")
+          } else if (document.getElementById("memberEmail").value != ${member.get(i).memberEmail} || document.getElementById("memberPassword").value != ${member.get(i).memberPassword}) {
+              alert("이메일 및 비밀번호를 확인해주세요.");
+          } else {
+              document.login.submit();
+          }
+      }
+   }
+
 </script>
 </html>
