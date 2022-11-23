@@ -4,6 +4,7 @@ import com.its.Auto.dto.MemberDTO;
 import com.its.Auto.dto.ReservationDTO;
 import com.its.Auto.dto.member_resDTO;
 import com.its.Auto.service.MemberService;
+import com.its.Auto.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ import java.util.List;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+    @Autowired
+    private ReservationService reservationService;
 
     @GetMapping("/save")
     public String saveform(){return "/member/save";}
@@ -42,7 +45,11 @@ public class MemberController {
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session, Model model){
       MemberDTO result=  memberService.login(memberDTO);
+      int fin = reservationService.notification(result.getId());
+        System.out.println(result.getId());
+        System.out.println(fin);
       session.setAttribute("member",result);
+      session.setAttribute(("result"),fin);
       model.addAttribute(("member"),result);
         if(result != null) {
           return "index";
@@ -82,9 +89,7 @@ public class MemberController {
     }
     @GetMapping("/list/desc")
     public String list_desc(@RequestParam Long id, Model model) {
-        System.out.println("id = " + id );
         List<member_resDTO> list = memberService.list_desc(id);
-        System.out.println("list = " + list);
         model.addAttribute("list", list);
         return "/member/reslist";
     }

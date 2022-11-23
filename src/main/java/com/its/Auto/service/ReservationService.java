@@ -30,4 +30,7 @@ public class ReservationService {
             return false;
         }
     }
+
+    public int notification(Long id) { return reservationRepository.notification(id);
+    }
 }

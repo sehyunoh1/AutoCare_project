@@ -24,4 +24,6 @@ public class ReservationRepository {
 
     public int fin(Long resId) { return sql.update(("reservation.fin"),resId);
     }
+
+    public int notification (Long id) {return sql.selectOne(("reservation.notify"),id);}
 }

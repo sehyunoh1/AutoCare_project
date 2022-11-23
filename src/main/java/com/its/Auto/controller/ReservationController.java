@@ -33,7 +33,6 @@ public class ReservationController {
     }
     @GetMapping("/fin")
     public String fin(@RequestParam Long resId, Model model){
-        System.out.println("resId = " + resId );
        boolean result= reservationService.fin(resId);
        member_resDTO resDTO = reservationService.detail(resId);
        model.addAttribute("detail",resDTO);
@@ -43,5 +42,6 @@ public class ReservationController {
            return "/reservation/ResDetail";
        }
     }
+
 
 }

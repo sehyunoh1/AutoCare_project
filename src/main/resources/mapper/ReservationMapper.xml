@@ -17,6 +17,9 @@
 <update id="fin" parameterType="Long">
    update reservation_table set fin = true,serviceTime = now() where resId=#{resId}
 </update>
+<select id="notify" parameterType="Long" resultType="int">
+    select count(r.fin) from reservation_table r,member_table m  where fin =true and r.memberId=#{id}
+</select>
 </mapper>
 
 

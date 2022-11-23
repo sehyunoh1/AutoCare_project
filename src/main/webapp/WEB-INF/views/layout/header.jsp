@@ -30,16 +30,21 @@
                 <li>
                  <c:choose>
                    <c:when test="${sessionScope.member.memberEmail != null}">
-<%--                        <a href="/member/list?id=${sessionScope.member.id}" class="nav-link text-white">--%>
-<%--                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>--%>
-<%--                            예약내역--%>
-<%--                        </a>--%>
+                      <c:choose>
+                      <c:when test="${sessionScope.result > 0}">
                        <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
                            예약 내역
                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                         <span class="visually-hidden">New alerts</span>
                           </span>
                        </button>
+                      </c:when>
+                     <c:otherwise>
+                         <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
+                             예약 내역
+                         </button>
+                     </c:otherwise>
+                      </c:choose>
                    </c:when>
                    <c:otherwise>
                        <a href="/member/save" class="nav-link text-white">
@@ -58,7 +63,6 @@
                         </a>
                     </c:when>
                    </c:choose>
-
                 </li>
             </ul>
         </div>
@@ -68,6 +72,7 @@
 <script>
     const list = () => {
       location.href="/member/list?id="+${sessionScope.member.id};
+
     }
 </script>
 </html>

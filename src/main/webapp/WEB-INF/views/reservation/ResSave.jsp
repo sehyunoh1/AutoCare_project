@@ -12,13 +12,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /*#abc{*/
+    /*  display: none;*/
+    /*}*/
+  </style>
 </head>
 <body>
 
 <div class="container">
   <h2>서비스 네트워크 예약</h2>
   <h4>온라인 예약으로 고객님이 원하는 장소와 시간에 차량관리를 받을수 있습니다.</h4>
-  <form action="/reservation/save" method="post" name="saveform">
+  <form action="/reservation/save" method="post" name="saveform" id="abc">
     <div id="CC">
 
         <input type="hidden" name="memberId" value="${sessionScope.member.id}">
@@ -74,7 +79,7 @@
       </div>
       </div>
         <div id="detaildiv" class="mt-5">
-          <textarea name="detail" class="form-control" id="detail" cols="" rows="10" placeholder="100자이내로 세부사항을 적어주세요" onchange="detail1()" disabled  >
+          <textarea name="detail" class="form-control" id="detail"   placeholder="100자이내로 세부사항을 적어주세요" onchange="detail1()" disabled  >
           </textarea>
         </div>
         <div id="centerdiv" class="mt-5">
