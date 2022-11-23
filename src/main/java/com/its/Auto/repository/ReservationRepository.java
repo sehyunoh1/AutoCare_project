@@ -25,5 +25,5 @@ public class ReservationRepository {
     public int fin(member_resDTO finish) { return sql.update(("reservation.fin"),finish);
     }
 
-    public String notification (Long id) {return sql.selectOne(("reservation.notify"),id);}
+    public int notification (Long id) {return sql.selectOne(("reservation.notify"),id);}
 }

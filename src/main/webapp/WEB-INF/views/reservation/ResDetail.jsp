@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <style>
         #fin{
-            width:100px;
+            width:150px;
         }
     </style>
 </head>
@@ -65,7 +65,7 @@
           </tr>
           <tr>
               <th>현재 상태</th>
-            <td>${finish.fin}</td>
+            <td>${detail.fin}</td>
           </tr>
       </table>
         <c:if test="${sessionScope.member.id == 4}">

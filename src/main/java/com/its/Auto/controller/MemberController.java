@@ -43,14 +43,12 @@ public class MemberController {
     public String loginform(){return "/member/login";}
 
     @PostMapping("/login")
-    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session, Model model){
+    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session){
       MemberDTO result=  memberService.login(memberDTO);
-      String fin = reservationService.notification(result.getId());
-        System.out.println(result.getId());
-        System.out.println(fin);
+      int fin = reservationService.notification(result.getId());
+        System.out.println("fin = " + fin);
+      session.setAttribute("result",fin);  
       session.setAttribute("member",result);
-      session.setAttribute(("result"),fin);
-      model.addAttribute(("member"),result);
         if(result != null) {
           return "index";
       }else {

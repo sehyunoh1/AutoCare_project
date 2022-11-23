@@ -30,19 +30,19 @@
                  <c:choose>
                    <c:when test="${sessionScope.member.memberEmail != null}">
                       <c:choose>
-                      <c:when test="${sessionScope.result > 0}">
-                       <button type="button" class="btn btn-secondary position-relative" id="res1" onclick="list()">
+                       <c:when test="${result >= 1}">
+                           <button type="button" class="btn btn-secondary position-relative" id="res1" onclick="list()">
+                               예약 내역
+                               <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                            <span class="visually-hidden">New alerts</span>
+                              </span>
+                           </button>
+                       </c:when>
+                       <c:otherwise>
+                           <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
                            예약 내역
-                           <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                        <span class="visually-hidden">New alerts</span>
-                          </span>
-                       </button>
-                      </c:when>
-                     <c:otherwise>
-                         <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
-                             예약 내역
-                         </button>
-                     </c:otherwise>
+                           </button>
+                       </c:otherwise>
                       </c:choose>
                    </c:when>
                    <c:otherwise>

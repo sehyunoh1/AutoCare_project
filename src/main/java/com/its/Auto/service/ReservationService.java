@@ -31,6 +31,6 @@ public class ReservationService {
         }
     }
 
-    public String notification(Long id) { return reservationRepository.notification(id);
+    public int notification(Long id) { return reservationRepository.notification(id);
     }
 }
