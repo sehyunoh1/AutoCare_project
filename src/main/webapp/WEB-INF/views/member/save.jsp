@@ -210,7 +210,7 @@
                         <input type="text" name="carNumber" class="form-control" id="carNumber" placeholder="차량번호를 입력해주세요.">
                     </div>
                      <div>
-                         <input type="button" id="savebutton" class="btn btn-success" onclick="save()" value="회원가입">
+                         <input type="button" id="savebutton" class="btn btn-success" onclick="saveFn()" value="회원가입">
                      </div>
                  </div>
                     </div>
@@ -223,11 +223,11 @@
  </div>
 </body>
 <script>
-    const save = () => {
-        if(document.getElementById("memberEmail").value ==""){
+    const saveFn = () => {
+        if(document.getElementById("memberEmail").value == ""){
             emailCk.innerHTML="필수 입력사항입니다."
             emailCk.style.color="red";
-        }else if(document.getElementById("memberPassword").value ==""){
+        }else if(document.getElementById("memberPassword").value == ""){
             passwordCk.innerHTML="필수 입력사항입니다."
             passwordCk.style.color="red";
         }else if(document.getElementById("memberName").value ==""){

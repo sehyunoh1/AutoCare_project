@@ -109,23 +109,29 @@
             <label for="memberPassword">Password</label>
         </div>
        </div>
-        <input type="button" class="w-24 btn btn-lg btn-primary" onclick="submit()" value="Sign in">
+        <button class="w-24 btn btn-lg btn-primary" onclick="login()">Sign in</button>
+
     </form>
+    <button class="w-24 btn btn-lg btn-primary" onclick="asdf()">adf</button>
 </main>
 </div>
 </body>
 <script>
-   const submit = () => {
+   const login = () => {
       for (let i=0 ; i<${member.size()} ; i++ ) {
           if (document.getElementById("memberEmail").value == "" || document.getElementById("memberPassword").value == "") {
               alert("이메일 및 비밀번호를 확인해주세요.")
-          } else if (document.getElementById("memberEmail").value != ${member.get(i).memberEmail} || document.getElementById("memberPassword").value != ${member.get(i).memberPassword}) {
-              alert("이메일 및 비밀번호를 확인해주세요.");
-          } else {
+          } else if (document.getElementById("memberEmail").value == ${member.get(i).memberEmail} || document.getElementById("memberPassword").value == ${member.get(i).memberPassword}) {
               document.login.submit();
+          } else {
+              alert("이메일 및 비밀번호를 확인해주세요.")
           }
       }
    }
-
+const asdf = () => {
+    <%--for (let i=0 ; i<${member.size()} ; i++ ) {--%>
+        console.log(${member})
+    // }
+}
 </script>
 </html>
