@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <style>
-        #res{
+        #res,#res1{
             margin-top: 30px;
         }
     </style>
@@ -19,7 +19,6 @@
             <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
             </a>
-
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
                     <a href="/" class="nav-link text-secondary">
@@ -32,7 +31,7 @@
                    <c:when test="${sessionScope.member.memberEmail != null}">
                       <c:choose>
                       <c:when test="${sessionScope.result > 0}">
-                       <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
+                       <button type="button" class="btn btn-secondary position-relative" id="res1" onclick="list()">
                            예약 내역
                            <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                         <span class="visually-hidden">New alerts</span>
@@ -72,7 +71,6 @@
 <script>
     const list = () => {
       location.href="/member/list?id="+${sessionScope.member.id};
-
     }
 </script>
 </html>

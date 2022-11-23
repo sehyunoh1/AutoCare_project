@@ -14,11 +14,11 @@
     <select id="detail" parameterType="Long" resultType="member_res">
         select m.*,r.*  from member_table m, reservation_table r  where m.id = r.memberId and r.resId=#{resId}
     </select>
-<update id="fin" parameterType="Long">
-   update reservation_table set fin = true,serviceTime = now() where resId=#{resId}
+<update id="fin" parameterType="member_res">
+   update reservation_table set fin = #{fin},serviceTime = now() where resId=#{resId}
 </update>
 <select id="notify" parameterType="Long" resultType="int">
-    select count(r.fin) from reservation_table r,member_table m  where fin =true and r.memberId=#{id}
+    select fin from reservation_table r,member_table m  where fin =true and r.memberId=#{id}
 </select>
 </mapper>
 

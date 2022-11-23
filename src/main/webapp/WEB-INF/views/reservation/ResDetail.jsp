@@ -5,6 +5,11 @@
 <head>
     <title>세부내용</title>
   <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <style>
+        #fin{
+            width:100px;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
@@ -60,24 +65,26 @@
           </tr>
           <tr>
               <th>현재 상태</th>
-          <c:choose>
-              <c:when test="${detail.fin == true}">
-                  <td>작업 완료</td>
-              </c:when>
-              <c:otherwise>
-                  <td>작업 미완료</td>
-              </c:otherwise>
-          </c:choose>
+            <td>${finish.fin}</td>
           </tr>
       </table>
         <c:if test="${sessionScope.member.id == 4}">
-            <a href="/reservation/fin?resId=${detail.resId}">작업완료</a>
+            <form action="/reservation/fin" method="get">
+                <select name="fin" id="fin" class="form-select" onchange="fin1()">
+                    <option value="예약대기">예약대기</option>
+                    <option value="차량입고">차량입고</option>
+                    <option value="작업진행중">작업진행중</option>
+                    <option value="작업완료">작업완료</option>
+                    <option value="차량인도">차량인도</option>
+                </select>
+            </form>
         </c:if>
     </div>
-
-
 </body>
 <script>
-
+    const fin1 = () => {
+        const fin = document.getElementById("fin").value
+      location.href="/reservation/fin?resId=${detail.resId}&fin="+fin
+    }
 </script>
 </html>

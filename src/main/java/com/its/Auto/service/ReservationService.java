@@ -22,15 +22,15 @@ public class ReservationService {
     public member_resDTO detail(Long resId) { return reservationRepository.detail(resId);
     }
 
-    public boolean fin(Long resId) {
-        int result = reservationRepository.fin(resId);
+    public String fin(member_resDTO finish) {
+        int result = reservationRepository.fin(finish);
         if(result >= 1){
-            return true;
+            return finish.getFin();
         }else {
-            return false;
+            return null;
         }
     }
 
-    public int notification(Long id) { return reservationRepository.notification(id);
+    public String notification(Long id) { return reservationRepository.notification(id);
     }
 }

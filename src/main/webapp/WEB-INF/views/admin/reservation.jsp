@@ -41,14 +41,7 @@
                         <td>X</td>
                     </c:otherwise>
                 </c:choose>
-                <c:choose>
-                    <c:when test="${resList.fin == true}">
-                        <td>완료</td>
-                    </c:when>
-                    <c:otherwise>
-                        <td>미완료</td>
-                    </c:otherwise>
-                </c:choose>
+               <td>${resList.fin}</td>
                 <td><a href="/reservation/reservation?resId=${resList.resId}">세부사항 조회</a></td>
             </tr>
         </c:forEach>

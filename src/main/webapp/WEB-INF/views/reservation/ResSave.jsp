@@ -79,7 +79,7 @@
       </div>
       </div>
         <div id="detaildiv" class="mt-5">
-          <textarea name="detail" class="form-control" id="detail"   placeholder="100자이내로 세부사항을 적어주세요" onchange="detail1()" disabled  >
+          <textarea name="detail" class="form-control" id="detail" cols="10" rows="10" placeholder="100자이내로 세부사항을 적어주세요" onchange="detail1()" disabled  >
           </textarea>
         </div>
         <div id="centerdiv" class="mt-5">

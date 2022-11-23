@@ -32,15 +32,15 @@ public class ReservationController {
        return "/reservation/ResDetail";
     }
     @GetMapping("/fin")
-    public String fin(@RequestParam Long resId, Model model){
-       boolean result= reservationService.fin(resId);
+    public String fin(@RequestParam Long resId,@RequestParam String fin, Model model){
+       member_resDTO finish = new member_resDTO();
+       finish.setFin(fin);
+       finish.setResId(resId);
+       String finish1 = reservationService.fin(finish);
        member_resDTO resDTO = reservationService.detail(resId);
        model.addAttribute("detail",resDTO);
-       if(result == true){
-           return "redirect:/reservation/reservation?resId="+resDTO.getResId();
-       }else {
-           return "/reservation/ResDetail";
-       }
+       model.addAttribute("finish",finish1);
+        return "redirect:/reservation/reservation?resId="+resDTO.getResId();
     }
 
 

@@ -45,7 +45,7 @@ public class MemberController {
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session, Model model){
       MemberDTO result=  memberService.login(memberDTO);
-      int fin = reservationService.notification(result.getId());
+      String fin = reservationService.notification(result.getId());
         System.out.println(result.getId());
         System.out.println(fin);
       session.setAttribute("member",result);
