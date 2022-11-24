@@ -1,6 +1,7 @@
 package com.its.Auto.controller;
 
 import com.its.Auto.dto.MemberDTO;
+import com.its.Auto.dto.PagingDTO;
 import com.its.Auto.dto.ReservationDTO;
 import com.its.Auto.dto.member_resDTO;
 import com.its.Auto.service.MemberService;
@@ -34,9 +35,11 @@ public class AdminController {
         return "redirect:/admin/member";
     }
     @GetMapping("/reservation")
-    public String reservation(Model model){
-        List<member_resDTO> reservationList = reservationService.list();
+    public String reservation(Model model,@RequestParam(value="page",required = false,defaultValue = "1") int page){
+        List<member_resDTO> reservationList = reservationService.list(page);
+        PagingDTO pagingDTO = reservationService.pagingParam(page);
         model.addAttribute(("resList"),reservationList);
+        model.addAttribute(("pagingDTO"),pagingDTO);
         return "/admin/reservation";
     }
 }

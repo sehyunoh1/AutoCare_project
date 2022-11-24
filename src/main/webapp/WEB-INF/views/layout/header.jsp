@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <style>
-        #res,#res1{
+        #res,#res1,#res_admin{
             margin-top: 30px;
         }
     </style>

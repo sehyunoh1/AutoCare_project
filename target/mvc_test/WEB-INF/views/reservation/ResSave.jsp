@@ -25,7 +25,6 @@
   <h4>온라인 예약으로 고객님이 원하는 장소와 시간에 차량관리를 받을수 있습니다.</h4>
   <form action="/reservation/save" method="post" name="saveform" id="abc">
     <div id="CC">
-
         <input type="hidden" name="memberId" value="${sessionScope.member.id}">
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="category" id="inlineRadio1" value="경정비" onchange="ab()">
@@ -201,6 +200,7 @@ const date = () => {
   });
   $( function() {
     $( '#datepicker' ).datepicker({
+      minDate:0,
       onSelect: function() {
         var date = $.datepicker.formatDate('yy-mm-dd',$('#datepicker').datepicker('getDate'));
         document.getElementById('datepicker').value = date
