@@ -39,7 +39,7 @@ public class AdminController {
         List<member_resDTO> reservationList = reservationService.list(page);
         PagingDTO pagingDTO = reservationService.pagingParam(page);
         model.addAttribute(("resList"),reservationList);
-        model.addAttribute(("pagingDTO"),pagingDTO);
+        model.addAttribute(("paging"),pagingDTO);
         return "/admin/reservation";
     }
 }

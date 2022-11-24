@@ -21,7 +21,6 @@ public class ReservationController {
 
     @PostMapping("/save")
     public String save(@ModelAttribute ReservationDTO reservationDTO){
-
         reservationService.save(reservationDTO);
         return "index";
     }
@@ -47,9 +46,7 @@ public class ReservationController {
         member_resDTO DTO = new member_resDTO();
         DTO.setId(id);
         DTO.setFin(fin);
-        System.out.println("fin = " + fin);
       List<member_resDTO>  finList = reservationService.sort(DTO);
-        System.out.println("finList = " + finList);
       return finList;
     }
 

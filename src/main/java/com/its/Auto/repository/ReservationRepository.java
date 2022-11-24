@@ -30,7 +30,7 @@ public class ReservationRepository {
     public List<member_resDTO> sort(member_resDTO DTO) { return sql.selectList(("reservation.sort"),DTO);
     }
 
-    public int boardcount() { return sql.selectOne("reservation.resCount");
+    public int rescount() { return sql.selectOne("reservation.resCount");
     }
 
     public List<member_resDTO> pagingList(Map<String, Integer> pagingParams) {

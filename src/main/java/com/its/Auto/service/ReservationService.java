@@ -48,7 +48,7 @@ public class ReservationService {
     }
 
     public PagingDTO pagingParam(int page) {
-        int resCount =reservationRepository.boardcount(); //
+        int resCount =reservationRepository.rescount();
         int maxPage = (int)(Math.ceil((double) resCount / PagingConst.PAGE_LIMIT));
         int startPage = ((int)(Math.ceil((double) page / PagingConst.BLOCK_LIMIT))-1) * PagingConst.BLOCK_LIMIT +1;
         int endPage = startPage + PagingConst.BLOCK_LIMIT-1;

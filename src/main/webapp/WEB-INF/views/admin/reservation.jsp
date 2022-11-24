@@ -6,6 +6,7 @@
 <head>
     <title>전체 예약 목록</title>
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    <script src="/resources/js/jquery.js"></script>
 </head>
 <body>
 <jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
@@ -57,7 +58,7 @@
             </c:when>
             <c:otherwise>
                 <li class="page-item">
-                    <a class="page-link" href="/board/?page=${paging.page-1}">[이전]</a>
+                    <a class="page-link" href="/admin/reservation/?page=${paging.page-1}">[이전]</a>
                 </li>
             </c:otherwise>
         </c:choose>
@@ -70,7 +71,7 @@
                 </c:when>
                 <c:otherwise>
                     <li class="page-item active">
-                        <a href="/board/?page=${i}" class="page-link">${i}</a>
+                        <a href="/admin/reservation/?page=${i}" class="page-link">${i}</a>
                     </li>
                 </c:otherwise>
             </c:choose>
@@ -83,7 +84,7 @@
             </c:when>
             <c:otherwise>
                 <li class="page-item">
-                    <a class="page-link" href="/board/?page=${paging.page+1}">[다음]</a>
+                    <a class="page-link" href="/admin/reservation/?page=${paging.page+1}">[다음]</a>
                 </li>
             </c:otherwise>
         </c:choose>
