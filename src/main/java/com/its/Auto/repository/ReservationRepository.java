@@ -26,4 +26,7 @@ public class ReservationRepository {
     }
 
     public int notification (Long id) {return sql.selectOne(("reservation.notify"),id);}
+
+    public List<member_resDTO> sort(member_resDTO DTO) { return sql.selectList(("reservation.sort"),DTO);
+    }
 }

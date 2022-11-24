@@ -20,6 +20,9 @@
 <select id="notify" parameterType="Long" resultType="Integer">
     select count(fin) from reservation_table   where memberId=#{id} and fin ='작업완료'
 </select>
+<select id="sort" parameterType="member_res" resultType="member_res">
+    select m.*,r.*  from member_table m, reservation_table r  where m.id = r.memberId and fin=#{fin} and m.id=#{id}
+</select>
 </mapper>
 
 

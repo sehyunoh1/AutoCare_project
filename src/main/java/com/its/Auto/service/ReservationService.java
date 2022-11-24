@@ -33,4 +33,7 @@ public class ReservationService {
 
     public int notification(Long id) { return reservationRepository.notification(id);
     }
+
+    public List<member_resDTO> sort(member_resDTO DTO) { return reservationRepository.sort(DTO);
+    }
 }

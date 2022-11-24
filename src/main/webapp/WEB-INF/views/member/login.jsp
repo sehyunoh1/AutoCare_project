@@ -10,7 +10,7 @@
     <title>로그인</title>
 
     <link rel="canonical" href="https://getbootstrap.kr/docs/5.2/examples/sign-in/">
-
+    <script src="/resources/js/jquery.js"></script>
 
 
 
@@ -112,7 +112,7 @@
         <button class="w-24 btn btn-lg btn-primary" onclick="login()">Sign in</button>
 
     </form>
-    <button class="w-24 btn btn-lg btn-primary" onclick="asdf()">adf</button>
+    <button class="w-24 btn btn-lg btn-primary" onclick="memberList()">adf</button>
 </main>
 </div>
 </body>
@@ -128,10 +128,10 @@
           }
       }
    }
-const asdf = () => {
-    <%--for (let i=0 ; i<${member.size()} ; i++ ) {--%>
-        console.log(${member})
-    // }
+const memberList = () => {
+    for (let i=0 ; i<${member.size()} ; i++ ) {
+        console.log(${member.get(i).memberEmail})
+    }
 }
 </script>
 </html>

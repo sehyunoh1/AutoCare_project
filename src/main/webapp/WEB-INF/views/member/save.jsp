@@ -225,17 +225,17 @@
 <script>
     const saveFn = () => {
         if(document.getElementById("memberEmail").value == ""){
-            emailCk.innerHTML="필수 입력사항입니다."
+            emailCk.innerHTML="필수 입력사항입니다.";
             emailCk.style.color="red";
         }else if(document.getElementById("memberPassword").value == ""){
-            passwordCk.innerHTML="필수 입력사항입니다."
+            passwordCk.innerHTML="필수 입력사항입니다.";
             passwordCk.style.color="red";
         }else if(document.getElementById("memberName").value ==""){
-            nameCk.innerHTML="필수 입력사항입니다."
-            nameCk.style.color="red";
+            nameCk.innerHTML="필수 입력사항입니다.";
+            nameCk.style.color= "red";
         }else {
             document.saveform.submit();
-            alert("회원가입이 완료되었습니다.")
+            alert("회원가입이 완료되었습니다.");
         }
         }
     const emailCk =() =>{

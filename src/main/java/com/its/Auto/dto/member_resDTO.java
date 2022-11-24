@@ -23,5 +23,4 @@ public class member_resDTO {
     private String serviceDate;
     private String serviceTime;
     private String fin;
-    private boolean check;  
 }

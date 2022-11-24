@@ -42,6 +42,15 @@ public class ReservationController {
        model.addAttribute("finish",finish1);
         return "redirect:/reservation/reservation?resId="+resDTO.getResId();
     }
-
+    @GetMapping("/sort")
+    public @ResponseBody List<member_resDTO> sort(@RequestParam String fin,@RequestParam Long id){
+        member_resDTO DTO = new member_resDTO();
+        DTO.setId(id);
+        DTO.setFin(fin);
+        System.out.println("fin = " + fin);
+      List<member_resDTO>  finList = reservationService.sort(DTO);
+        System.out.println("finList = " + finList);
+      return finList;
+    }
 
 }

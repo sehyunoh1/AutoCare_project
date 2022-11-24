@@ -42,12 +42,13 @@ public class MemberController {
     @GetMapping("/login")
     public String loginform(Model model){
         List<MemberDTO> memberDTO = memberService.loginCk();
+        System.out.println("memberDTO = " + memberDTO);
         model.addAttribute("member",memberDTO);
         return "/member/login";
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session,Model model){
+    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session){
       MemberDTO result=  memberService.login(memberDTO);
       int fin = reservationService.notification(result.getId());
         System.out.println("fin = " + fin);
@@ -59,12 +60,6 @@ public class MemberController {
             return "/member/login";
         }
     }
-
-//    @GetMapping("/login")
-//    public String loginCk(Model model){
-//
-//        return "/member/login";
-//    }
     @GetMapping("/member")
     public String detail(Long id,Model model){
         MemberDTO member = memberService.detail(id);
