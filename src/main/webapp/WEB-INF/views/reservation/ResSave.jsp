@@ -201,6 +201,7 @@ const date = () => {
   });
   $( function() {
     $( '#datepicker' ).datepicker({
+      minDate:0,
       onSelect: function() {
         var date = $.datepicker.formatDate('yy-mm-dd',$('#datepicker').datepicker('getDate'));
         document.getElementById('datepicker').value = date

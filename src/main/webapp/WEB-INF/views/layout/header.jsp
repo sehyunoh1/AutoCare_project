@@ -42,6 +42,11 @@
                            <button type="button" class="btn btn-secondary position-relative" id="res" onclick="list()">
                            예약 내역
                            </button>
+                       <c:if test="${sessionScope.member.id == 4}">
+                           <button type="button" class="btn btn-secondary position-relative" id="res_admin" onclick="adminlist()">
+                               전체 예약 리스트
+                           </button>
+                       </c:if>
                        </c:otherwise>
                       </c:choose>
                    </c:when>
@@ -71,6 +76,10 @@
 <script>
     const list = () => {
       location.href="/member/list?id="+${sessionScope.member.id};
+    }
+    const adminlist = () => {
+        $("res").hide();
+        location.href="/admin/reservation";
     }
 </script>
 </html>
