@@ -233,7 +233,7 @@
         }else if(document.getElementById("memberPassword").value == ""){
             passwordCk.innerHTML="필수 입력사항입니다.";
             passwordCk.style.color="red";
-        }else if(document.getElementById("memberName").value ==""){
+        }else if(document.getElementById("memberName").value == ""){
             nameCk.innerHTML="필수 입력사항입니다.";
             nameCk.style.color= "red";
         }else {

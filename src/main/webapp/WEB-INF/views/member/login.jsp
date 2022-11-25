@@ -121,7 +121,7 @@
        const Email = document.getElementById("memberEmail")
        const Pass = document.getElementById("memberPassword")
        if (Email.value == "" || Pass.value == "") {
-           alert("이메일 및 비밀번호를 확인해주세요.")}
+           alert("이메일 및 비밀번호를 입력해주세요.")}
         else {
             document.login.submit();
        }

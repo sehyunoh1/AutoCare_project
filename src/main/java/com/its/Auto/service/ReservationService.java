@@ -62,4 +62,7 @@ public class ReservationService {
         pageDTO.setEndPage(endPage);
         return pageDTO;
     }
+
+    public List<member_resDTO> date(member_resDTO DTO) { return reservationRepository.date(DTO);
+    }
 }

@@ -52,7 +52,6 @@ public class MemberController {
       MemberDTO result=  memberService.login(memberDTO);
         if(result != null) {
             int fin = reservationService.notification(result.getId());
-            System.out.println("fin = " + fin);
             session.setAttribute("result",fin);
             session.setAttribute("member",result);
             return "index";

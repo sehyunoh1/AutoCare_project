@@ -36,4 +36,7 @@ public class ReservationRepository {
     public List<member_resDTO> pagingList(Map<String, Integer> pagingParams) {
         return sql.selectList(("reservation.pagingList"),pagingParams);
     }
+
+    public List<member_resDTO> date(member_resDTO DTO) { return sql.selectList(("reservation.date"),DTO);
+    }
 }

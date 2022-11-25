@@ -29,6 +29,9 @@ select count(resId) from reservation_table
 <select id="pagingList" parameterType="java.util.HashMap" resultType="member_res">
 select m.*,r.* from member_table m , reservation_table r where m.id=r.memberId order by resId desc limit #{start},#{Limit}
 </select>
+    <select id="date" parameterType="member_res" resultType="member_res">
+        select m.*,r.*  from member_table m, reservation_table r  where m.id = r.memberId and serviceDate=#{serviceDate} and m.id=#{id}
+    </select>
 </mapper>
 
 

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -41,5 +42,13 @@ public class AdminController {
         model.addAttribute(("resList"),reservationList);
         model.addAttribute(("paging"),pagingDTO);
         return "/admin/reservation";
+    }
+    @GetMapping("/date")
+    public @ResponseBody List<member_resDTO> date(@RequestParam Long resId,@RequestParam String serviceDate,Model model){
+        member_resDTO DTO = new member_resDTO();
+        DTO.setResId(resId);
+        DTO.setServiceDate(serviceDate);
+        List<member_resDTO> dateList = reservationService.date(DTO);
+        return dateList;
     }
 }

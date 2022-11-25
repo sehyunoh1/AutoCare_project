@@ -85,8 +85,9 @@
               output += "<th>카테고리</th>";
               output += "<th>예약날짜</th>";
               output += "<th>진행상태</th></tr>";
-              output ="<tr>"
+
               for(let i in finList){
+                  output ="<tr>"
                 output += "<td><a href='/reservation/reservation?resId="+finList[i].resId+"'>"+ finList[i].resId+"</a></td>"
                 output += "<td>"+ finList[i].memberName+"</td>"
                 output += "<td>"+ finList[i].memberMobile+"</td>"
