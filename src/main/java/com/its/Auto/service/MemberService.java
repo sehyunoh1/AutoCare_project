@@ -43,6 +43,6 @@ public class MemberService {
     public List<MemberDTO> memberList() { return memberRepository.memberList();
     }
 
-    public List<MemberDTO> loginCk() { return memberRepository.loginCk();
-    }
+//    public List<MemberDTO> loginCk() { return memberRepository.loginCk();
+//    }
 }

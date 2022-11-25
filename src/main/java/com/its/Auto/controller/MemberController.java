@@ -41,21 +41,21 @@ public class MemberController {
     }
     @GetMapping("/login")
     public String loginform(Model model){
-        List<MemberDTO> memberDTO = memberService.loginCk();
-        System.out.println("memberDTO = " + memberDTO);
-        model.addAttribute("member",memberDTO);
+//        List<MemberDTO> memberDTO = memberService.loginCk();
+//        System.out.println("memberDTO = " + memberDTO);
+//        model.addAttribute("member",memberDTO);
         return "/member/login";
     }
 
     @PostMapping("/login")
     public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session){
       MemberDTO result=  memberService.login(memberDTO);
-      int fin = reservationService.notification(result.getId());
-        System.out.println("fin = " + fin);
-      session.setAttribute("result",fin);  
-      session.setAttribute("member",result);
         if(result != null) {
-          return "index";
+            int fin = reservationService.notification(result.getId());
+            System.out.println("fin = " + fin);
+            session.setAttribute("result",fin);
+            session.setAttribute("member",result);
+            return "index";
       }else {
             return "/member/login";
         }

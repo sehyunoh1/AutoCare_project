@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css/">
     <script src="/resources/js/jquery.js"></script>
     <style>
+        *{
+            margin:auto;
+        }
         h2{
             font-size: 50px;
         }

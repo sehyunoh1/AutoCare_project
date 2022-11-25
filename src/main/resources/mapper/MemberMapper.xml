@@ -33,9 +33,9 @@
 <delete id="delete" parameterType="Long">
     delete  from member_table where id=#{id};
 </delete>
-<select id="memberList" resultType="member">
-select * from member_table
-</select>
+<!--<select id="memberList" resultType="member">-->
+<!--select * from member_table-->
+<!--</select>-->
 </mapper>
 
 

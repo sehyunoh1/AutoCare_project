@@ -109,28 +109,26 @@
             <label for="memberPassword">Password</label>
         </div>
        </div>
-        <button class="w-24 btn btn-lg btn-primary" onclick="login()">Sign in</button>
+<%--        <input type="button" class="w-24 btn btn-lg btn-primary" onclick="login()" value="Sign in">--%>
+        <button type="button" class="w-24 btn btn-lg btn-primary" onclick="fun()">Sign in</button>
     </form>
-    <button class="w-24 btn btn-lg btn-primary" onclick="memberList()">adf</button>
+
 </main>
 </div>
 </body>
 <script>
-   const login = () => {
-      for (let i=0 ; i<${member.size()} ; i++ ) {
-          if (document.getElementById("memberEmail").value == "" || document.getElementById("memberPassword").value == "") {
-              alert("이메일 및 비밀번호를 확인해주세요.")
-          } else if (document.getElementById("memberEmail").value == ${member.get(i).memberEmail} || document.getElementById("memberPassword").value == ${member.get(i).memberPassword}) {
-              document.login.submit();
-          } else {
-              alert("이메일 및 비밀번호를 확인해주세요.")
-          }
-      }
-   }
-const memberList = () => {
-    for (let i=0 ; i<${member.size()} ; i++ ) {
-        console.log(${member.get(i).memberEmail})
-    }
-}
+   const fun= () => {
+       const Email = document.getElementById("memberEmail")
+       const Pass = document.getElementById("memberPassword")
+       if (Email.value == "" || Pass.value == "") {
+           alert("이메일 및 비밀번호를 확인해주세요.")}
+        else {
+            document.login.submit();
+       }
+       }
+
+
+
+
 </script>
 </html>
